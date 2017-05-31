@@ -1,0 +1,11 @@
+<p-dataTable resizableColumns="true" [value]="products | async" selectionMode="single" (onRowSelect)="onRowSelect($event)" [paginator]="true" rows="15" [responsive]="true">
+    <p-column field="name" header="Name" [sortable]="true"></p-column>
+    <p-column field="sku" header="SKU" [sortable]="true"></p-column>
+    <p-column field="price" header="Price" [sortable]="true"></p-column>
+    <p-column field="imageUrl" header="Image">
+      <ng-template let-col let-product="rowData" pTemplate="body">
+            <img src="{{product[col.field]}}">
+        </ng-template>
+    </p-column>
+    <p-footer><div class="ui-helper-clearfix" style="width:100%"><button type="button" pButton icon="fa-plus" style="float:left" (click)="showDialogToAdd()" label="Add"></button></div></p-footer>
+</p-dataTable>

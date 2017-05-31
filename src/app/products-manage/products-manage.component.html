@@ -1,0 +1,4 @@
+<div class="container">
+      <app-products-table (selectProduct)="getSelectedProduct($event)" (newProduct)="addOrUpdate($event)" (displayDialog)="dialogShow($event)"></app-products-table>
+      <app-product-form [product]="selectedProduct" [addProduct]="addBool" [dialogDisp]="dialogDisplay"></app-product-form>
+</div>

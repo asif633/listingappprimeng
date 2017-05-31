@@ -1,0 +1,31 @@
+<p-dialog [width]="700" [resizable]="true" header="Product Details" [(visible)]="dialog" (onHide)="hideDialog($event)" [responsive]="true" showEffect="fade" [modal]="true">
+    <div class="ui-grid ui-grid-responsive ui-fluid m-3" *ngIf="product">
+        <div class="ui-grid-row mb-2">
+            <div class="ui-grid-col-4"><label for="vin">Name</label></div>
+            <div class="ui-grid-col-8"><input pInputText id="name" [(ngModel)]="product.name" /></div>
+        </div>
+        <div class="ui-grid-row mb-2">
+            <div class="ui-grid-col-4"><label for="sku">SKU</label></div>
+            <div class="ui-grid-col-8"><input pInputText id="sku" [(ngModel)]="product.sku" /></div>
+        </div>
+        <div class="ui-grid-row mb-2">
+            <div class="ui-grid-col-4"><label for="description">Description</label></div>
+            <div class="ui-grid-col-8"><textarea pInputTextarea [(ngModel)]="product.description"></textarea></div>
+        </div>
+        <div class="ui-grid-row mb-2">
+            <div class="ui-grid-col-4"><label for="price">Price</label></div>
+            <div class="ui-grid-col-8"><input pInputText id="price" [(ngModel)]="product.price" /></div>
+        </div>
+        <div class="ui-grid-row mb-2">
+            <div class="ui-grid-col-4"><label>Upload Image</label></div>
+            <div class="ui-grid-col-8"><input required accept=".jpg" id="file" name="file" type="file" /></div>
+        </div>
+    </div>
+    <p-footer>
+        <div class="ui-dialog-buttonpane ui-helper-clearfix">
+            <button type="button" pButton icon="fa-close" *ngIf="!addProduct" (click)="delete()" label="Delete"></button>
+            <button type="button" pButton icon="fa-check" *ngIf="!addProduct" (click)="update()" label="Update"></button>
+            <button type="button" pButton icon="fa-check" *ngIf="addProduct" (click)="save()" label="Save"></button>
+        </div>
+    </p-footer>
+</p-dialog>

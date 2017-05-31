@@ -1,0 +1,18 @@
+<p-panel *ngIf="product">
+  <p-header>
+    Laptop
+  </p-header>
+  <div class="text-center">
+    <img src="{{product.imageUrl}}">
+  </div>
+  <h4>{{product.name}}</h4>
+  <h6 class="text-muted">{{product.sku}}</h6>
+  <p>{{product.description}}</p>
+  <hr>
+  <div class="row">
+    <h4 class="col"> {{product.price | currency: 'INR': true}} </h4>
+    <div class="col w-80 text-right">
+      <button class="btn btn-primary">Buy Now</button>
+    </div>
+  </div>
+</p-panel>

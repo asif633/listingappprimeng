@@ -1,5 +1,5 @@
 # Listingappprimeng
-
+Check the Blog for this tutorial series [Angular2 With Firebase and PrimeNg] (https://www.bongtechs.com/angular2-setup-primeng/).
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.1.
 
 ## Development server
